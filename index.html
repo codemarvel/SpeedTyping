@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
         <title>SpeedTyping</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <div><p>
-            This is a sample paragraph for practising Speed typing and 
-            just for checking if every thing is working fine or not. 
-        </p></div>
-        <input type="text" placeholder="Type in the text above..." size="100" id="inputText">
+        <div id="text">This is a sample paragraph for practicing Speed typing and just for checking if every thing is working fine or not.</div>
+        <br>
+        <input type="text" id="inputText" value="" placeholder="Type in the text above..." size="100" >
+        <div id="errorText"></div>
+        <script src="typing.js"></script>
     </body>
 </html>
