@@ -14,9 +14,10 @@ $(document).ready(function(){
             errors++;
             console.log('mistyped');
         }
-        if(index == text.length){
+        if(index == text.length-1){
             $('#errorText').html(`<span style='color:blue'>Completed</span><span style='color:tomato'> Errors : ${errors}</span>` );
             $(this).off();
+            $('#end').click();
         }
     });
 

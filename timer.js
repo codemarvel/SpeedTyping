@@ -1,13 +1,17 @@
 $(document).ready(function(){
-    let time = 62; //this should always be in seconds
+    let time = 70; //this should always be in seconds
     let timer = $('#timer');
-    let setTime = setInterval(decTime,1000);
+    let setTime;
+    $('#inputText').on('keydown', function(){
+        setTime = setInterval(decTime,1000);
+        $(this).off('keydown');
+    });
     function decTime(){
-        if(--time===0){
+        if(--time < 0){
             timer.text(`  Time over !!!`);
             $('#end').click();
         }
-        else timer.text(`  ${Math.floor(time/60)}m : ${Math.floor(time%60)}s`);
+        else timer.text(`${Math.floor(time/60)}m : ${Math.floor(time%60)}s`);
     }
 
     //End button
