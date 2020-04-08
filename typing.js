@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#inputText').val('');
     let index = 0, errors = 0;
     console.log(text);
-    
+
     let $itext = $('#inputText').keypress(function(){
         index = $('#inputText').val().length;
         if(String.fromCharCode(event.which) === text[index]){
@@ -16,6 +16,7 @@ $(document).ready(function(){
         }
         if(index == text.length-1){
             $('#errorText').html(`<span style='color:blue'>Completed</span><span style='color:tomato'> Errors : ${errors}</span>` );
+            $('#reset').html('<button id="reset">Reset</button>')
             $(this).off();
             $('#end').click();
         }
@@ -23,6 +24,10 @@ $(document).ready(function(){
 
     //end button clicked
     $('#end').click(function(){
-     $itext.off();   
+     $itext.off();
     });
+    //reset button clicked
+    $("#reset").click(function(){
+           location.reload(true);
+       });
 });
